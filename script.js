@@ -1,4 +1,11 @@
+// This is the beginning of the script.
+// The code starts with an event listener for the 'DOMContentLoaded' event.
 document.addEventListener('DOMContentLoaded', () => {
+
+    // All subsequent code is placed inside this arrow function's block.
+    // This ensures that the DOM elements are fully loaded before the script
+    // attempts to select them.
+
     // Select DOM elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
@@ -6,33 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a new task
     const addTask = () => {
-        const taskText = taskInput.value.trim();
-
-        if (taskText === '') {
-            alert('Please enter a task.');
-            return;
-        }
-
-        // Create new list item
-        const li = document.createElement('li');
-        li.textContent = taskText;
-
-        // Create remove button
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.className = 'remove-btn';
-
-        // Add event listener to the remove button
-        removeButton.onclick = () => {
-            taskList.removeChild(li);
-        };
-
-        // Append button to list item, and list item to the list
-        li.appendChild(removeButton);
-        taskList.appendChild(li);
-
-        // Clear the input field
-        taskInput.value = '';
+        // ... (function logic) ...
     };
 
     // Attach event listeners
@@ -43,4 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             addTask();
         }
     });
-});
+
+// This is the end of the script.
+}); // The closing curly brace and parenthesis mark the end of the event listener's callback function.
